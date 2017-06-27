@@ -2,11 +2,9 @@
 
 $( _ => {
 
-  getJSON('http://laboratoria.cuadra.co:9339/api/v1/students/', (err, json) => {
-
+  getJSON('https://laboratoria.cuadra.co:9339/api/v1/students/', (err, json) => {
     if (err) { return alert(err.message);}
 
-    console.log(json);
     const studentList = $('#studentList');
     json.forEach((e)=>{
         studentList.append('<li>'+e.name+'<input type="checkbox"></li>');
