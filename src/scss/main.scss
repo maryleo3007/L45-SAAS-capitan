@@ -1,0 +1,78 @@
+@import 'colors';
+@import 'fonts';
+@import 'resolutions';
+
+$total-columns-lg: 4;
+$total-columns-sm: 12;
+$total-columns-md: 6;
+$col-1: 8.33%;
+
+@function calc-width($n) {
+  @return  $col-1 * $n;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.captain-header{
+  background-color: $bg-lab;
+  padding: 15px 0;
+  color: $font-color;
+  font: $title-font;
+}
+
+.col-lg-3{
+  width: calc-width($total-columns-lg);
+  float: left;
+}
+
+.menu {
+  margin: 0;
+  ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    li {
+      margin: 5px 0px;
+      padding: 15px;
+      color: $font-color;
+      background-color: $bg-black;
+    }
+    li:hover {
+
+      background-color: $bg-lab;
+    }
+  }
+}
+.aside{
+  color: $font-color;
+  background-color: $bg-black;
+  margin-top: 10px;
+}
+#footer {
+  width: 100%;
+  height: 50px;
+  clear: both;
+  background-color: $bg-black;
+  p{
+    color: $font-color;
+    padding: 10px;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .col-md-2{
+    width: calc-width($total-columns-md);
+    float: left;
+  }
+}
+
+@media (max-width: 540px) {
+  .col-sm-1{
+    width: calc-width($total-columns-sm);
+    float: left;
+  }
+}
